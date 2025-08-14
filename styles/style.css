@@ -102,7 +102,7 @@
   text-transform: uppercase;
   color: var(--accent-color, #ff0070);
   top: 3px;
-  right: 28px; 
+  right: 28px;
 }
 
 .decoration::after {
@@ -121,7 +121,7 @@
   position: absolute;
   content: "";
   height: 25px;
-  width: 25px;  
+  width: 25px;
   border-block-start: 1px solid var(--border-color, #ff0070);
   border-inline-end: 1px solid var(--border-color, #ff0070);
   top: 20px;
@@ -145,7 +145,7 @@
 
 .title {
   font-size: 18px;
-  font-weight: 700; 
+  font-weight: 700;
   line-height: 23px;
 }
 
@@ -208,7 +208,7 @@
 .concentration {
   display: grid;
   grid-template-columns: auto;
-  margin-block-end: 80px; 
+  margin-block-end: 80px;
   gap: 20px;
 }
 
@@ -465,7 +465,7 @@
     gap: 13px;
   }
 
-  .header__name{
+  .header__name {
     margin-left: -3%;
   }
 
@@ -528,7 +528,7 @@
     }
   }
   
-  @media (width <= 1024px) and (width >= 768px) {
+@media (width <= 1024px) and (width >= 768px) {
   .footer {
     margin-block-start: 60px;
   }
