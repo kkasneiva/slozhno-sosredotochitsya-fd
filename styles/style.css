@@ -1,5 +1,535 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 400;
+  transition-duration: var(--transition-duration);
+}
+
+.header {
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr min-content 1fr;
+  width: 100%;
+  height: 100vh;
+  min-block-size: 668px;
+  margin-block-end: 60px;
+  padding: 20px;
+}
+
+.header__theme-menu {
+  justify-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: var(--border-color, #ff0070);
+  line-height: 100%;
+  padding: 3px 13px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition-duration: var(--transition-duration);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--other-color, #ff007040);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+
+.header__theme-menu-button_active {
+  cursor: default;
+  pointer-events: none;
+  border-color: currentColor;
+}
+
+.header__name {
+  align-self: center;
+  color: var(--header-text, #db00ff);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  margin-left: -2%;
+  text-shadow: 4px 4px 0px var(--box-shadow, #ff0070);
+}
+
+.header__text {
+  justify-self: flex-end;
+  align-self: center;
+  font-weight: 700;
+  max-width: 50%;
+}
+
+.decoration {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.text__decoration {
+  background-color: var(--accent-color, #ff0070);
+  color: var(--subtitle-color, #000028);
+}
+
+.decoration::before {
+  position: absolute;
+  content: "REC";
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--accent-color, #ff0070);
+  top: 3px;
+  right: 28px; 
+}
+
+.decoration::after {
+  position: absolute;
+  background-color: var(--accent-color, #ff0070);
+  min-height: 9px;
+  min-width: 9px;
+  content: "";
+  top: 8px;
+  right: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;  
+  border-block-start: 1px solid var(--border-color, #ff0070);
+  border-inline-end: 1px solid var(--border-color, #ff0070);
+  top: 20px;
+  right: 20px;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  border-block-end: 1px solid var(--border-color, #ff0070);
+  border-inline-start: 1px solid var(--border-color, #ff0070);
+  height: 25px;
+  width: 25px;
+  left: 20px;
+  bottom: 20px;
+}
+
+.main {
+  padding: 0px 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700; 
+  line-height: 23px;
+}
+
+.content__title {
+  color: var(--section-name-color, #ff0070);
+}
+
+.section__article__name {
+  background-color: var(--accent-color, #ff0070);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--subtitle-color, #000028);
+}
+
+.article {
+  display: grid;
+  gap: 10px;
+}
+
+.article__list {
+  display: grid;
+  gap: 20px;
+}
+
+.article__text {
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--text-color, #f1b2ce);
+}
+
+.article__list-item .section__article__name {
+  font-weight: 400;
+}
+
+.section__article-text-link {
+  text-decoration: none;
+  text-shadow: 3px 2px var(--accent-color, #ff0070);
+}
+
+.section__article-text-link:focus {
+  outline: 0;
+}
+
+.section__article-text-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section__article-text-link:hover {
+  border-bottom: 1px solid var(--border-bottom, #f1b2ce);
+}
+
+.content__section {
+  display: grid;
+  grid-template-columns: minmax(236px, 1fr) 2fr;
+  gap: 10px;
+}
+
+.concentration {
+  display: grid;
+  grid-template-columns: auto;
+  margin-block-end: 80px; 
+  gap: 20px;
+}
+
+.concentration .content__title {
+  max-width: 315px;
+}
+
+.concentration__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.better-concentration {
+  margin-block-end: 80px;
+}
+
+.better-concentration__title {
+  margin-block-end: 20px;
+}
+
+.focus {
+  margin-block-end: 63px;
+}
+
+.focus__container .article {
+  margin-block-end: 20px;
+}
+
+.section {
+  line-height: 130%;
+}
+
+.section__name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--section-name-color, #ff0070);
+  margin-bottom: 20px;
+}
+
+.section__article-text {
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  color: var(--text-color, #f1b2ce);
+}
+
+.section__article-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-block-end: 80px;
+  gap: 20px;
+}
+
+.section:last-of-type .section__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section:last-of-type .section__image:first-of-type,
+.section:last-of-type .section__image:last-of-type {
+  grid-column: span 2;
+}
+
+.section:last-of-type .section__image:nth-of-type(2),
+.section:last-of-type .section__image:nth-of-type(3) {
+  grid-row: span 2;
+}
+
+.section:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.section:first-of-type,
+.section:nth-of-type(3) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section:last-of-type .section__name {
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0;
+}
+
+.dark__section__name {
+  background-color: var(--accent-color, #ff0070);
+  max-width: none;
+  color: var(--subtitle-color, #000028);
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  min-height: 668px;
+  margin-block-start: 62px;
+  padding: 20px;
+}
+
+.footer__title {
+  align-self: center;
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  color: var(--header-text, #db00ff);
+  text-shadow: 2px 2px 0px var(--box-shadow, #ff0070);
+}
+
+@media (min-width: 375px) and (max-width: 668px) {
+  .main {
+    padding: 0px 10px;
+  }
+
+  .header {
+    margin-block-end: 40px;
+    padding: 10px;
+  }
+
+  .header__theme-menu {
+      justify-self: end;
+      margin-block-start: 55px;
+      padding: 10px 0px;
+    }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+  }
+
+  .header__name {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 82.5%;
+    text-shadow: 4px 4px 0px var(--accent-color);
+    margin-left: 0;
+  }
+
+  .header__text {
+    max-width: 100%;
+  }
+
+  .decorated-zone::before {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .decorated-zone::after {
+    top: 10px;
+    right: 10px;
+  }
+
+  .decoration::before {
+    top: -6px;
+    right: 18px;
+  }
+
+  .decoration::after {
+    top: -2px;
+    right: 1px;
+  }
+
+  .content__section {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+
+  .focus {
+    margin-block-end: 32px;
+  }
+
+  .concentration {
+    margin-block-end: 50px;
+  }
+
+  .concentration__container {
+    grid-template-columns: auto;
+  }
+
+  .better-concentration {
+    margin-block-end: 50px;
+  }
+
+  .section:nth-of-type(2) .section__name {
+    width: 100%;
+  }
+
+  .section:nth-of-type(2) .section__article-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 97%;
+    margin-block-end: 50px;
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) .article__list-item {
+    flex: 1 0 auto;
+    width: 103%;
+  }
+
+  .section:first-of-type .section__name,
+  .section:nth-of-type(3) .section__name {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 100%;
+    margin-block-end: 50px;
+  }
+
+  .section:last-of-type .section__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .section:last-of-type .section__image-container {
+    width: 100px;
+  }
+
+  .section:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header__theme-menu {
+    justify-self: end;
+    margin-block-start: 167px;
+  }
+  .header__theme-menu-list {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .header__name{
+    margin-left: -3%;
+  }
+
+  .header__text {
+    max-width: 364px;
+  }
+
+  .concentration {
+    grid-template-columns: auto;
+    display: grid;
+  }
+
+  .content__section {
+      gap: 20px;
+    }
+
+  .concentration .content__title {
+    max-width: 236px;
+  }
+
+  .concentration__container {
+    grid-template-columns: auto;
+  }
+
+  .section__name {
+    width: 35%;
+  }
+
+  .section__article-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-end: 80px;
+    gap: 20px;
+  }
+
+  .section:first-of-type .section__name,
+  .section:nth-of-type(3) .section__name {
+    max-width: 230px;
+  }
+
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 64%;
+  }
+
+  .section:nth-of-type(2) .article__list-item {
+    flex: 1 0 auto;
+    width: 100%;
+  }
+}
+
+@media (width < 668px) and (width >= 375px) {
+    .footer__title {
+      font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    }
+
+    .footer {
+      margin-block-start: 40px;
+      padding: 262px 10px;
+    }
+  }
+  
+  @media (width <= 1024px) and (width >= 768px) {
+  .footer {
+    margin-block-start: 60px;
+  }
 }

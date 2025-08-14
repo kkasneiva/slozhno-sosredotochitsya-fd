@@ -9,4 +9,46 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --font-family: "IBM Plex Mono", monospace;
+  --title-color: #db00ff;
+  --header-text: #db00ff;
+  --section-name-color: #ff0070;
+  --text-color: #f1b2ce;
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --subtitle-color: #000028;
+  --border-color: #ff0070;
+  --border-bottom: #f1b2ce;
+  --other-color: var(--violet, #ff007040);
+
+  .decoration {
+    display: block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-family: "IBM Plex Mono", monospace;
+    --title-color: #db00ff;
+    --header-text: #db00ff;
+    --accent-color: #ff0070;
+    --section-name-color: #ff0070;
+    --article-name-color: var(--background-color);
+    --text-color: #f1b2ce;
+    --article-text-color: var(--title-shadow);
+    --subtitle-color: #000028;
+    --link-shadow: var(--title-shadow);
+    --bg-color: #000028;
+    --bg-image: url(../images/cover-image-dark.png);
+    --border-bottom: #f1b2ce;
+    --border-color: #ff0070;
+    --title-decoration: var(--title-shadow);
+    --rec-color: var(--title-shadow);
+    --other-color: var(--violet, #ff007040);
+
+    .decoration {
+      display: block;
+    }
+  }
 }
