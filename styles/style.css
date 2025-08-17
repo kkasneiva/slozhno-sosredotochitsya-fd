@@ -299,16 +299,16 @@
 }
 
 @media (max-width: 1023px) {
-  .content__section { 
-    gap: 20px; 
+  .content__section {
+    gap: 20px;
   }
 
   .header__theme-menu-list {
     flex-direction: column;
   }
 
-  .concentration__container { 
-    grid-template-columns: auto; 
+  .concentration__container {
+    grid-template-columns: auto;
   }
 }
 
@@ -468,7 +468,7 @@
 }
 
 @media (min-width: 1024px) {
-  .header__text { 
-    max-width: 50%; 
+  .header__text {
+    max-width: 50%;
   }
 }
