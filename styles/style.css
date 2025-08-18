@@ -85,7 +85,6 @@
   justify-self: flex-end;
   align-self: center;
   font-weight: 700;
-  max-width: 50%;
 }
 
 .decoration {
@@ -150,7 +149,6 @@
 .section__article__name {
   font-size: 18px;
   font-weight: 700;
-  line-height: 23px;
 }
 
 .article {
@@ -360,6 +358,10 @@
     top: -2px;
     right: 1px;
   }
+
+  .section__article__name {
+  line-height: 23px;
+}
 
   .content__section {
     grid-template-columns: auto;
