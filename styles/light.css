@@ -1,16 +1,16 @@
 :root.theme-light {
-  --header-text: #ffc2e6; 
-  --article-name-color: #353430; 
-  --section-article-text: #353430; 
-  --section-name-color: #353430; 
-  --text-color: #353430; 
-  --accent-color: #ff8dcb; 
-  --bg-color: #fff1f7; 
-  --bg-image: url(../images/cover-image-light.png); 
-  --subtitle-color: #353430; 
-  --border-color: #353430; 
-  --border-bottom: #353430; 
-  --other-color: var(--grey, #32312D66); 
+  --header-text: #ffc2e6;
+  --article-name-color: #353430;
+  --section-article-text: #353430;
+  --section-name-color: #353430;
+  --text-color: #353430;
+  --accent-color: #ff8dcb;
+  --bg-color: #fff1f7;
+  --bg-image: url(../images/cover-image-light.png);
+  --subtitle-color: #353430;
+  --border-color: #353430;
+  --border-bottom: #353430;
+  --other-color: var(--grey, #32312D66);
 
   .decoration {
       display: none;
