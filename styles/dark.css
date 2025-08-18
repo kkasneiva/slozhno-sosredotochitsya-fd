@@ -9,7 +9,11 @@
   --subtitle-color: #000028;
   --border-color: #ff0070;
   --border-bottom: #f1b2ce;
-  --other-color: var(--violet, #ff007040);
+  --other-color: var(--violet, #FF007066);
+
+  .decoration {
+      display: block;
+    }
   }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +29,7 @@
     --border-bottom: #f1b2ce;
     --border-color: #ff0070;
     --rec-color: var(--title-shadow);
-    --other-color: var(--violet, #ff007040);
+    --other-color: var(--violet, #FF007066);
 
     .decoration {
       display: block;

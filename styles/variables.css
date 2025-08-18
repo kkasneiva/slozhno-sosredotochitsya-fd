@@ -10,15 +10,11 @@
   --border-bottom: #353430;
   --subtitle-color: #353430;
   --main-text-color: #353430;
-  --other-color: var(--grey, #35343040);
+  --other-color: var(--grey, #32312D66);
   --rec-color: var(--background-color);
   --article-name-color: var(--main-text-color);
   --section-name-color: var(--main-text-color);
   --link-shadow: var(--title-color);
   --box-shadow: #ff0070;
   --transition-duration: .3s;
-}
-
-.decoration {
-  display: none;
 }
